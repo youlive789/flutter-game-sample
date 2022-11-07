@@ -12,12 +12,13 @@ class HomeScreen extends GetView<HomeController> {
       appBar: AppBar(
         title: const Text("test"),
       ),
-      body: Column(children: [
-        ElevatedButton(
-          onPressed: () => Get.toNamed(AppRoutes.game),
-          child: const Text("start game"),
-        )
-      ]),
+      body: Obx(() => Column(children: [
+            ElevatedButton(
+              onPressed: () => Get.toNamed(AppRoutes.game),
+              child: const Text("start game"),
+            ),
+            Text("${controller.counter}")
+          ])),
     );
   }
 }

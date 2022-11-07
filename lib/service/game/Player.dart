@@ -20,4 +20,9 @@ class Player extends SpriteComponent with Draggable, HasGameRef<MyGame> {
     position.y = info.eventPosition.game.y;
     return true;
   }
+
+  @override
+  void update(double dt) {
+    position += gameRef.joystick.delta * 0.1;
+  }
 }
